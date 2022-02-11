@@ -366,7 +366,11 @@ class BranchUserController extends Controller
             'r_id.br_checker_assign_manual_id',  'r_id.br_authorizer', 'r_id.canceled_by', 'r_id.rechecker',
               'r_id.br_checker_recheck_reason','r_id.ho_authorize_status', 'r_id.pk_for_sub_br',
              'branch_code','br_checker','ho_maker', 'ho_checker_comment',
-           'ho_checker', 'r_id.entry_date', 'r.sys_id', 'r.para_id', 'r.value', 'sys.para_name', 'sys.para_type', 's.system_name', 'sys.system_id','r_id.request_type_id', 'rt.request_type_name', 'rt.system_id as rt_system_id', 'r_id.request_type_value' , 'r_id.ho_maker_remarks', 'u.name as branch_maker_name','r_id.ho_authorizer'   ])
+           'ho_checker', 
+           'r_id.entry_date',
+           'r_id.br_checker_sts_update_date',
+           
+           'r.sys_id', 'r.para_id', 'r.value', 'sys.para_name', 'sys.para_type', 's.system_name', 'sys.system_id','r_id.request_type_id', 'rt.request_type_name', 'rt.system_id as rt_system_id', 'r_id.request_type_value' , 'r_id.ho_maker_remarks', 'u.name as branch_maker_name','r_id.ho_authorizer'   ])
 
          ->whereRaw("r_id.sl != '' $conditionSql")
          ->orderBy('r_id.sl', 'desc')
@@ -773,19 +777,17 @@ class BranchUserController extends Controller
                      'r_id.br_checker_assign_manual_id',  'r_id.br_authorizer', 'r_id.canceled_by', 'r_id.rechecker',
                        'r_id.br_checker_recheck_reason','r_id.ho_authorize_status', 'r_id.pk_for_sub_br',
                       'branch_code','br_checker','ho_maker', 'ho_checker_comment',
-                    'ho_checker', 'r_id.entry_date', 'r.sys_id', 'r.para_id', 'r.value', 'sys.para_name', 'sys.para_type', 's.system_name', 'sys.system_id','r_id.request_type_id', 'rt.request_type_name', 'rt.system_id as rt_system_id', 'r_id.request_type_value' , 'r_id.ho_maker_remarks', 'u.name as branch_maker_name','r_id.ho_authorizer'   ])
+                    'ho_checker', 
+                    'r_id.entry_date',
+                    'r_id.br_checker_sts_update_date',
+                     'r.sys_id', 'r.para_id', 'r.value', 'sys.para_name', 'sys.para_type', 's.system_name', 'sys.system_id','r_id.request_type_id', 'rt.request_type_name', 'rt.system_id as rt_system_id', 'r_id.request_type_value' , 'r_id.ho_maker_remarks', 'u.name as branch_maker_name','r_id.ho_authorizer'   ])
 
                   ->whereRaw($logic)
                   ->orderBy('r_id.sl', 'desc')
                   ->paginate(60);
-
-
-
-
-      
-      
-      
-        //return $request_array;
+  
+    
+       // return $requests;
       
       
       
@@ -833,7 +835,10 @@ class BranchUserController extends Controller
                      'r_id.br_checker_assign_manual_id',  'r_id.br_authorizer', 'r_id.canceled_by', 'r_id.rechecker',
                        'r_id.br_checker_recheck_reason','r_id.ho_authorize_status', 'r_id.pk_for_sub_br',
                       'branch_code','br_checker','ho_maker', 'ho_checker_comment',
-                    'ho_checker', 'r_id.entry_date', 'r.sys_id', 'r.para_id', 'r.value', 'sys.para_name', 'sys.para_type', 's.system_name', 'sys.system_id','r_id.request_type_id', 'rt.request_type_name', 'rt.system_id as rt_system_id', 'r_id.request_type_value' , 'u.name as branch_maker_name'   ])
+                    'ho_checker',
+                     'r_id.entry_date',
+                     'r_id.br_checker_sts_update_date',
+                      'r.sys_id', 'r.para_id', 'r.value', 'sys.para_name', 'sys.para_type', 's.system_name', 'sys.system_id','r_id.request_type_id', 'rt.request_type_name', 'rt.system_id as rt_system_id', 'r_id.request_type_value' , 'u.name as branch_maker_name'   ])
 
                   ->whereRaw($logic)
                   ->orderBy('r_id.sl', 'desc')
@@ -1064,7 +1069,10 @@ class BranchUserController extends Controller
                   ->select(['r_id.sl','r_id.req_id', 'r_id.status', 'r_id.action_status', 'r_id.action_status_br_checker', 'r_id.action_status_ho_maker', 'r_id.action_status_ho_checker', 'r_id.recheck_status',
                      'r_id.br_checker_assign_manual_id',  'r_id.br_authorizer', 'r_id.canceled_by', 'r_id.rechecker', 'r_id.br_checker_recheck_reason',
                       'branch_code','br_maker','br_checker','ho_maker', 'ho_checker_comment', 
-                    'ho_checker', 'r_id.entry_date', 'r.sys_id', 'r.para_id', 'r.value', 'sys.para_name', 'sys.para_type', 's.system_name', 'sys.system_id','r_id.request_type_id', 'rt.request_type_name', 'rt.system_id as rt_system_id', 'r_id.request_type_value' ,'r_id.pk_for_sub_br','u.name as branch_maker_name'   ])
+                    'ho_checker', 
+                    'r_id.entry_date',
+                    'r_id.br_checker_sts_update_date',
+                     'r.sys_id', 'r.para_id', 'r.value', 'sys.para_name', 'sys.para_type', 's.system_name', 'sys.system_id','r_id.request_type_id', 'rt.request_type_name', 'rt.system_id as rt_system_id', 'r_id.request_type_value' ,'r_id.pk_for_sub_br','u.name as branch_maker_name'   ])
 
                   ->where('r_id.action_status_ho_maker',4)->orWhere('r_id.br_maker',"$user_id")->orWhere('r_id.br_checker_assign_manual_id',"$user_id")
                   ->orderBy('r_id.sl', 'desc')
@@ -1439,9 +1447,7 @@ class BranchUserController extends Controller
 
         $my_user_id =  Auth::user()->id;
         $system_get_data = DB::select(DB::raw("SELECT su.id, sys.system_name,su.sys_user_id, su.entry_date from system_user_id su left join systems sys on su.sys_id=sys.id  where [user]='$my_user_id'"));
-
-       
-                                              
+                                           
       return view('user_security.system_user_id_map', compact('system_data','system_get_data'));
     }
 

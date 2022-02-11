@@ -695,7 +695,15 @@ if(!empty($_GET['search_status'])){
                       </td>
 
 
-                    <td><?php echo date('d F, Y h:i:s A', strtotime($r['entry_date']));  ?></td>                    
+                      <td><?php if(!empty($r['entry_date'])){
+
+                        echo date('d F, Y h:i:s A', strtotime($r['entry_date']));
+
+                        }else{
+                        echo '--';
+                        }  ?>
+
+                        </td>                   
                     <td style="color: black">{{$r['user_name']}}</td>
                     <td style="color: black"><?php
 
@@ -1263,7 +1271,15 @@ if(!empty($_GET['search_status'])){
 
 
 
-                    <td><?php echo date('d F, Y h:i:s A', strtotime($r['entry_date']));  ?></td> 
+               <td><?php if(!empty($r['entry_date'])){
+
+                echo date('d F, Y h:i:s A', strtotime($r['entry_date']));
+
+                }else{
+                echo '--';
+                }  ?>
+
+                </td>    
 
                     <td style="color: black">
                       
@@ -1493,7 +1509,7 @@ if(!empty($_GET['search_status'])){
                       "request_id" => $request->sl,
                       "req_id" => $request->req_id,
                       "system_id" => $request->sys_id,
-                      "entry_date" => $request->entry_date,
+                      "entry_date" => $request->br_checker_sts_update_date,
                       "br_maker" => $request->br_maker,
                       "request_type_system_id" => $request->rt_system_id,
                       "recheck_status" => $request->recheck_status,
@@ -1832,7 +1848,13 @@ echo "";
     </td>
 
 
-                    <td><?php echo date('d F, Y h:i:s A', strtotime($r['entry_date']));  ?></td> 
+                    <td><?php if(!empty($r['entry_date'])){
+
+                       echo date('d F, Y h:i:s A', strtotime($r['entry_date']));
+
+                    }else{
+                      echo '--';
+                    }  ?></td> 
 
                     <td style="color: black">
                       
@@ -2092,7 +2114,7 @@ echo "";
          "request_id" => $request->sl,
          "req_id" => $request->req_id,
          "system_id" => $request->sys_id,
-         "entry_date" => $request->entry_date,
+         "entry_date" => $request->br_checker_sts_update_date,
          "request_type_system_id" => $request->rt_system_id,
          "recheck_status" => $request->recheck_status,
         
@@ -2177,7 +2199,15 @@ echo "";
                    <th scope="row" style="color: black" class="slNo sl_no{{ $r['request_id'] }}" data-row_id="{{ $r['request_id'] }}">{{$i++}}</th>
 
                     <td>{{$r['req_id']}}</td>
-                    <td><?php echo date('d F, Y h:i:s A', strtotime($r['entry_date']));  ?></td> 
+                    <td><?php if(!empty($r['entry_date'])){
+
+                      echo date('d F, Y h:i:s A', strtotime($r['entry_date']));
+
+                      }else{
+                      echo '--';
+                      }  ?>
+
+                      </td> 
 
                    <td style="color: black">
                      
@@ -2616,7 +2646,7 @@ echo "";
                       "request_id" => $request->sl,
                       "req_id" => $request->req_id,
                       "system_id" => $request->sys_id,
-                      "entry_date" => $request->entry_date,
+                      "entry_date" => $request->br_checker_sts_update_date,
                       "request_type_system_id" => $request->rt_system_id,
                      
                       "status" => $request->status,
@@ -2964,7 +2994,15 @@ if ($status=='7' &&  $action_status=='7') {
 
 
 
-                   <td><?php echo date('d F, Y h:i:s A', strtotime($r['entry_date']));  ?></td> 
+                  <td><?php if(!empty($r['entry_date'])){
+
+                      echo date('d F, Y h:i:s A', strtotime($r['entry_date']));
+
+                      }else{
+                      echo '--';
+                      }  ?>
+                      
+                      </td> 
 
                     <td style="color: black">
                       
@@ -3410,7 +3448,17 @@ if ($status=='7' &&  $action_status=='7') {
 
 ?> </td>
 
-                    <td><?php echo date('d F, Y h:i:s A', strtotime($r['entry_date']));  ?></td> 
+                    <td><?php
+                      if(!empty($r['entry_date'])){
+
+                      echo date('d F, Y h:i:s A', strtotime($r['entry_date']));
+
+                      }else{
+                      echo '--';
+                      }  
+                    ?>
+
+                    </td> 
                     
                     <td style="color: black">
                       
@@ -3971,7 +4019,15 @@ if ($status=='7' &&  $action_status=='7') {
 ?> </td>
 
 
-                    <td><?php echo date('d F, Y h:i:s A', strtotime($r['entry_date']));  ?></td> 
+                    <td><?php if(!empty($r['entry_date'])){
+
+                    echo date('d F, Y h:i:s A', strtotime($r['entry_date']));
+
+                    }else{
+                    echo '--';
+                    }  ?>
+
+                    </td> 
 
                     <td style="color: black">
                       
@@ -4248,7 +4304,15 @@ if ($status=='7' &&  $action_status=='7') {
                    
                     <td>{{$r['req_id']}}</td>
 
-                   <td><?php echo date('d F, Y h:i:s A', strtotime($r['entry_date']));  ?></td> 
+                    <td><?php if(!empty($r['entry_date'])){
+
+                      echo date('d F, Y h:i:s A', strtotime($r['entry_date']));
+
+                      }else{
+                      echo '--';
+                      }  ?>
+
+                      </td> 
 
                     <td style="color: black">
                       
@@ -4586,7 +4650,15 @@ if ($status=='7' &&  $action_status=='7') {
                    
                     <td>{{$r['req_id']}}</td>
 
-                  <td><?php echo date('d F, Y h:i:s A', strtotime($r['entry_date']));  ?></td> 
+                    <td><?php if(!empty($r['entry_date'])){
+
+                      echo date('d F, Y h:i:s A', strtotime($r['entry_date']));
+
+                      }else{
+                      echo '--';
+                      }  ?>
+
+                      </td> 
 
                     <td style="color: black">
                       

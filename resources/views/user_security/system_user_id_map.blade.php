@@ -65,9 +65,9 @@
 
                                     <div class="col-lg-10">
 
-                                        <select class="form-control select2" name="system_id" id="system_id">
+                                        <select class="form-control select2" name="system_id" id="system_id" required>
 
-                                            <option>--select--</option>
+                                            <option value="">--select--</option>
                                             <?php
 
 
